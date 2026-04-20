@@ -1,1 +1,5 @@
 # Write your code here
+import re
+
+def ten_times_abc(string):
+    return bool(re.fullmatch(r"(abc){10}", string))
