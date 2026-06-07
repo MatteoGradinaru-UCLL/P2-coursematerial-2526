@@ -351,5 +351,19 @@ movies = [
 ]
 
 
+from util import Card
+
 def genres(movies):
-    return {movie.genres for movie in movies}
+    return {genre for movie in movies for genre in movie.genres}
+
+def actors(movies):
+    return {actor for movie in movies for actor in movie.actors}
+
+def repeat_consecutive(xs, n):
+    return [element for element in xs for _ in range(n)]
+
+def repeat_alternating(xs, n):
+    return [element for _ in range(n) for element in xs]
+
+def cards(values, suits):
+    return {Card(v, s) for v in values for s in suits}

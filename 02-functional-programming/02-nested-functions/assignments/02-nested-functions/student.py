@@ -6,14 +6,27 @@ def indices_of(xs, condition):
     return [index for index in range(len(xs)) if condition(xs[index])]
 
 
-
 def count_older_than(people, min_age):
-    def is_older_than(person):
-        return person.age >= min_age
-    return count(people, is_older_than)
+    def is_older_then(person):
+        return person >= min_age
+    return count(people, is_older_then)
 
 
 def indices_of_cards_with_suit(cards, suit):
     def is_suit(card):
         return card.suit == suit
     return indices_of(cards, is_suit)
+
+
+
+
+# def count_older_than(people, min_age):
+#     def is_older_than(person):
+#         return person.age >= min_age
+#     return count(people, is_older_than)
+
+
+# def indices_of_cards_with_suit(cards, suit):
+#     def is_suit(card):
+#         return card.suit == suit
+#     return indices_of(cards, is_suit)
