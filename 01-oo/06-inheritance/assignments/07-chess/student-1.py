@@ -28,7 +28,7 @@ class Position:
 
     def __hash__(self):
         return hash((self.x, self.y))
-    
+
 
 class ChessPiece:
     def __init__(self, position, color):
@@ -73,19 +73,18 @@ class Pawn(ChessPiece):
         return self.position.move(0, direction) == new_position
 
 
-
 class King(ChessPiece):
     def __init__(self, position, color):
         super().__init__(position, color)
 
+
     def is_legal_move(self, new_position):
         if new_position == self.position:
             return False
-        if not ChessPiece.is_valid_position(new_position):
+        if not King.is_valid_position(new_position):
             return False
         if abs(new_position.x - self.position.x) > 1:
             return False
         if abs(new_position.y - self.position.y) > 1:
             return False
         return True
-

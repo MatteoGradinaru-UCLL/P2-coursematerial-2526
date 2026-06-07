@@ -33,7 +33,6 @@ class D(A):
     def b(self):
         self.f()
 
-    @abstractmethod
     def f(self):
         pass
 

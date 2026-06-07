@@ -2,25 +2,19 @@ class Item:
     def __init__(self, name, price):
         self.name = name
         self.price = price
-    
+
     def can_be_sold_to(self, owner):
         return True
 
 
 class AgeRestrictedItem(Item):
     def can_be_sold_to(self, owner):
-        if owner.age >= 18:
-            return True
-        else:
-            return False
+        return owner.age >= 18
 
 
 class CountryRestrictedItem(Item):
     def can_be_sold_to(self, owner):
-        if owner.country == "Arstotzka":
-            return False
-        else:
-            return True
+        return owner.country != "Arstotzka"
 
 class Customer:
     def __init__(self, name, age, country):

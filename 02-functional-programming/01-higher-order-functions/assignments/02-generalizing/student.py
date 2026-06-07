@@ -380,3 +380,17 @@ def get_diractor_of_actor(movies, actor):
         if actor in movie.actors:
             directors.append(movie.director)
     return directors
+
+
+def find_string_starting_with(strings, letter):
+    for string in strings:
+        if len(string) != 0 and string[0].lower() == letter.lower():
+            return string
+    return None
+
+
+def find_number_greater_than(numbers, threshold):
+    for number in numbers:
+        if number > threshold:
+            return number
+    return None
